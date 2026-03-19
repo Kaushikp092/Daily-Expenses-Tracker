@@ -7,7 +7,7 @@ const port = process.env.PORT;
 const app = express();
 
 // connecting frontend to backend
-app.use(cors({origin: process.env.CLIENT_URL}));
+app.use(cors({origin: process.env.CLIENT_URL, credentials: true}));
 
 // mongoDb mongoose connection
 connectDB();
