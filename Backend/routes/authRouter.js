@@ -9,6 +9,11 @@ router.post("/register", async (req, res) => {
 	try {
 		const { name, email, password } = req.body;
 
+		const existingUser = await User.findOne({email});
+		if(existingUser) {
+			return res.status(400).json({message: "User already exists"});
+		}
+
 		const hashedPassword = await bcrypt.hash(password, 10);
 
 		const user = new User({
@@ -19,9 +24,9 @@ router.post("/register", async (req, res) => {
 
 		await user.save();
 
-		res.status(201).json({ message: "User Registered" });
+		return res.status(201).json({ message: "User Registered Successfully" , user:user});
 	} catch (err) {
-		res.status(500).json({ message: err.message });
+		return res.status(500).json({ message: err.message });
 	}
 });
 
@@ -41,17 +46,26 @@ router.post("/login", async (req, res) => {
 			expiresIn: "1d",
 		});
 
-		res.status(200).json({
+		return res.status(200).json({
 			token,
 			user: {
 				id: user._id,
-				username: user.username,
+				username: user.name,
 				email: user.email,
 			},
 		});
 	} catch (err) {
-		res.status(500).json({ message: err.message });
+		return res.status(500).json({ message: err.message });
 	}
+});
+
+router.get("/", async (req, res) => {
+  try {
+	const users = await User.find().select("-password");
+	return res.status(200).json({ users });
+  } catch (error) {
+	return res.status(500).json({ message: "Server error", error: error.message });
+  }
 });
 
 module.exports = router;
