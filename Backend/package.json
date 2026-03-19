@@ -1,10 +1,10 @@
 {
   "name": "dail-expenses-tracker",
   "version": "1.0.0",
-  "description": "This app is for to manage daily records of expenses ",
+  "description": "This app manages daily expense records",
   "main": "server.js",
   "scripts": {
-    "start": "server.js",
+    "start": "node server.js",
     "dev": "nodemon server.js"
   },
   "keywords": [],
