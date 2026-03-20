@@ -20,7 +20,7 @@ router.post("/register", async (req, res) => {
 			name,
 			email,
 			password: hashedPassword,
-		}).select("-password");
+		});
 
 		await user.save();
 
@@ -35,11 +35,6 @@ router.post("/register", async (req, res) => {
 router.post("/login", async (req, res) => {
 	try {
 		const { email, password } = req.body;
-
-		const existingUser = await User.findOne({ email });
-		if (existingUser) {
-			return res.status(400).json({ message: "User already exists" });
-		}
 
 		const user = await User.findOne({ email });
 
