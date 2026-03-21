@@ -29,23 +29,23 @@ const Login = () => {
 	};
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-950 flex items-center justify-center p-4">
+		<div className="min-h-screen bg-linear-to-br from-gray-950 to-blue-950 flex items-center justify-center p-4">
 			<div className="w-full max-w-md">
-				<div className="backdrop-blur-xl bg-black/30 border border-blue-900/50 rounded-3xl p-8 shadow-2xl shadow-blue-950/50">
+				<div className="backdrop-blur-xl bg-black/40 border border-blue-900/60 rounded-3xl p-8 shadow-2xl shadow-blue-950/60">
 					<div className="text-center mb-8">
-						<h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent mb-4 drop-shadow-2xl">
+						<h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-blue-400 via-sky-300 to-blue-500 bg-clip-text text-transparent mb-4 drop-shadow-2xl">
 							Welcome Back
 						</h1>
-						<p className="text-blue-300 text-lg font-medium drop-shadow-md">Sign in to continue</p>
+						<p className="text-blue-300 text-lg font-medium drop-shadow-md">Sign in to your dashboard</p>
 					</div>
 
 					{message && (
-						<div className="mb-6 p-4 bg-blue-900/50 border border-blue-600/60 rounded-2xl backdrop-blur-sm text-blue-200 text-center font-semibold shadow-xl shadow-blue-900/30 animate-pulse">
+						<div className="mb-6 p-4 bg-blue-900/60 border border-blue-600/70 rounded-2xl backdrop-blur-sm text-blue-200 text-center font-semibold shadow-xl shadow-blue-900/40 animate-bounce">
 							{message}
 						</div>
 					)}
 					{error && (
-						<div className="mb-6 p-4 bg-red-900/50 border border-red-600/60 rounded-2xl backdrop-blur-sm text-red-200 text-center font-semibold shadow-xl shadow-red-900/30 animate-pulse">
+						<div className="mb-6 p-4 bg-red-900/60 border border-red-600/70 rounded-2xl backdrop-blur-sm text-red-200 text-center font-semibold shadow-xl shadow-red-900/40 animate-pulse">
 							{error}
 						</div>
 					)}
@@ -53,13 +53,13 @@ const Login = () => {
 					<form onSubmit={handleSubmit} className="space-y-6">
 						<div>
 							<label className="block text-sm font-semibold text-blue-300 mb-2">
-								Email Address
+								📧 Email
 							</label>
 							<input
 								type="email"
 								value={form.email}
 								placeholder="your@email.com"
-								className="w-full px-5 py-4 bg-gray-900/80 border border-blue-800/50 rounded-2xl backdrop-blur-md text-blue-200 placeholder-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/70 focus:border-blue-600/80 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-900/30"
+								className="w-full px-5 py-4 bg-gray-900/90 border border-blue-800/60 rounded-2xl backdrop-blur-lg text-blue-200 placeholder-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500/50 focus:border-blue-600/80 transition-all duration-400 shadow-xl hover:shadow-2xl hover:shadow-blue-900/40"
 								onChange={(e) => setForm({ ...form, email: e.target.value })}
 								required
 							/>
@@ -67,13 +67,13 @@ const Login = () => {
 
 						<div>
 							<label className="block text-sm font-semibold text-blue-300 mb-2">
-								Password
+								🔒 Password
 							</label>
 							<input
 								type="password"
 								value={form.password}
 								placeholder="••••••••"
-								className="w-full px-5 py-4 bg-gray-900/80 border border-blue-800/50 rounded-2xl backdrop-blur-md text-blue-200 placeholder-blue-400 focus:outline-none focus:ring-2 focus:ring-blue-500/70 focus:border-blue-600/80 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-900/30"
+								className="w-full px-5 py-4 bg-gray-900/90 border border-blue-800/60 rounded-2xl backdrop-blur-lg text-blue-200 placeholder-blue-400 focus:outline-none focus:ring-4 focus:ring-blue-500/50 focus:border-blue-600/80 transition-all duration-400 shadow-xl hover:shadow-2xl hover:shadow-blue-900/40"
 								onChange={(e) => setForm({ ...form, password: e.target.value })}
 								required
 							/>
@@ -82,73 +82,73 @@ const Login = () => {
 						<button
 							type="submit"
 							disabled={loading}
-							className="w-full py-4 bg-gradient-to-r from-blue-700 to-blue-900 hover:from-blue-800 hover:to-blue-950 text-white font-bold rounded-2xl shadow-2xl shadow-blue-900/50 hover:shadow-3xl hover:shadow-blue-900/70 transform hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed"
+							className="w-full py-4 bg-linear-to-r from-blue-700 via-blue-800 to-blue-900 hover:from-blue-800 hover:via-blue-900 hover:to-blue-950 text-white font-bold rounded-3xl shadow-2xl shadow-blue-900/60 hover:shadow-3xl hover:shadow-blue-900/80 transform hover:-translate-y-2 active:scale-[0.97] transition-all duration-400 ring-2 ring-blue-500/30 disabled:opacity-30 disabled:cursor-not-allowed"
 						>
 							{loading ? (
 								<span className="flex items-center justify-center">
-									<svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-blue-300" fill="none" viewBox="0 0 24 24">
+									<svg className="animate-spin -ml-1 mr-4 h-6 w-6 text-blue-300" fill="none" viewBox="0 0 24 24">
 										<circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
 										<path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
 									</svg>
-									Signing In
+									Signing In...
 								</span>
 							) : (
-								"Sign In"
+								"Sign In Securely"
 							)}
 						</button>
 					</form>
 
-					<div className="mt-8 pt-6 border-t border-blue-900/50">
-						<p className="text-center text-sm text-blue-400">
-							Already have an account?{" "}
+					<div className="mt-8 pt-6 border-t border-blue-900/60">
+						<p className="text-center text-sm text-blue-400 mb-2">
+							New user?{" "}
 							<span
-								className="text-blue-300 font-bold hover:text-blue-200 cursor-pointer transition-all underline decoration-blue-600/50 hover:decoration-blue-500"
+								className="text-blue-300 font-bold hover:text-blue-200 cursor-pointer transition-all underline decoration-blue-600/60 hover:decoration-blue-500 hover:decoration-2"
 								onClick={() => navigate("/register")}
 							>
-								Create New Account
+								Create Account
 							</span>
 						</p>
 					</div>
 
-					{/* Demo Section */}
-					<div className="mt-10 p-6 bg-gray-900/60 border border-blue-900/40 rounded-2xl backdrop-blur-lg shadow-2xl shadow-blue-950/40">
-						<h3 className="text-xl font-bold text-blue-300 mb-5 text-center">
-							⭐ Instant Demo Access
+					{/* Enhanced Demo Section - Copy Only */}
+					<div className="mt-10 p-7 bg-linear-to-br from-blue-900/80 to-gray-900/80 border-2 border-blue-800/80 rounded-3xl backdrop-blur-xl shadow-2xl shadow-blue-950/80">
+						<h3 className="text-2xl font-black text-blue-300 mb-6 text-center drop-shadow-xl">
+							 Instant Demo Credentials
 						</h3>
-						<div className="grid md:grid-cols-2 gap-5">
+						<div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
 							<div className="group">
-								<div className="font-mono bg-blue-950 p-4 rounded-2xl mb-4 text-center text-blue-300 font-semibold text-lg shadow-inner shadow-blue-900/50">
+								<div className="font-mono bg-blue-950/90 p-5 rounded-2xl mb-4 text-center text-xl text-blue-300 font-bold shadow-2xl shadow-blue-900/60 backdrop-blur-sm">
 									demo@gmail.com
 								</div>
 								<button
-									className="w-full py-3 px-6 bg-blue-800/90 hover:bg-blue-900 text-blue-200 font-semibold rounded-xl transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-blue-900/50 group-hover:scale-[1.02] border border-blue-700/50"
+									className="w-full py-4 px-8 bg-linear-to-r from-blue-700 to-blue-900 hover:from-blue-800 hover:to-blue-950 text-blue-200 font-bold rounded-2xl transition-all duration-400 shadow-xl shadow-blue-900/60 hover:shadow-2xl hover:shadow-blue-900/80 hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98] ring-2 ring-blue-600/50"
 									onClick={() => {
 										navigator.clipboard.writeText("demo@gmail.com");
-										setMessage("📧 Demo email copied!");
-										setTimeout(() => setMessage(""), 2000);
+										setMessage("📧 Demo email copied to clipboard! Paste above 👆");
+										setTimeout(() => setMessage(""), 3000);
 									}}
 								>
-									📋 Copy Email
+									 Copy 
 								</button>
 							</div>
 							<div className="group">
-								<div className="font-mono bg-blue-950 p-4 rounded-2xl mb-4 text-center text-cyan-300 font-semibold text-lg shadow-inner shadow-blue-900/50">
+								<div className="font-mono bg-blue-950/90 p-5 rounded-2xl mb-4 text-center text-xl text-cyan-300 font-bold shadow-2xl shadow-blue-900/60 backdrop-blur-sm">
 									123456
 								</div>
 								<button
-									className="w-full py-3 px-6 bg-cyan-800/90 hover:bg-cyan-900 text-cyan-200 font-semibold rounded-xl transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-cyan-900/50 group-hover:scale-[1.02] border border-cyan-700/50"
+									className="w-full py-4 px-8 bg-linear-to-r from-cyan-700 to-blue-900 hover:from-cyan-800 hover:to-blue-950 text-cyan-200 font-bold rounded-2xl transition-all duration-400 shadow-xl shadow-cyan-900/60 hover:shadow-2xl hover:shadow-cyan-900/80 hover:-translate-y-1 hover:scale-[1.02] active:scale-[0.98] ring-2 ring-cyan-600/50"
 									onClick={() => {
 										navigator.clipboard.writeText("123456");
-										setMessage("🔑 Demo password copied!");
-										setTimeout(() => setMessage(""), 2000);
+										setMessage("🔑 Demo password copied! Paste above 👆");
+										setTimeout(() => setMessage(""), 3000);
 									}}
 								>
-									🔑 Copy Password
+									 Copy 
 								</button>
 							</div>
 						</div>
-						<p className="text-xs text-blue-500 mt-4 text-center font-medium opacity-80">
-							Perfect for quick testing ✨
+						<p className="text-sm text-blue-400 mt-6 text-center font-semibold opacity-90 drop-shadow-md">
+							Perfect for quick testing your app ✨
 						</p>
 					</div>
 				</div>

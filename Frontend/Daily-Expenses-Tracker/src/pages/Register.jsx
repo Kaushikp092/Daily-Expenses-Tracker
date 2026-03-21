@@ -31,11 +31,11 @@ const Register = () => {
 	};
 
 	return (
-		<div className="min-h-screen bg-gradient-to-br from-gray-900 to-blue-950 flex items-center justify-center p-4">
+		<div className="min-h-screen bg-linear-to-br from-gray-900 to-blue-950 flex items-center justify-center p-4">
 			<div className="w-full max-w-md">
 				<div className="backdrop-blur-xl bg-black/30 border border-blue-900/50 rounded-3xl p-8 shadow-2xl shadow-blue-950/50">
 					<div className="text-center mb-8">
-						<h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent mb-4 drop-shadow-2xl">
+						<h1 className="text-4xl md:text-5xl font-bold bg-linear-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent mb-4 drop-shadow-2xl">
 							Join Us
 						</h1>
 						<p className="text-blue-300 text-lg font-medium drop-shadow-md">Create your free account</p>
@@ -98,7 +98,7 @@ const Register = () => {
 						<button
 							type="submit"
 							disabled={loading}
-							className="w-full py-4 bg-gradient-to-r from-blue-700 to-blue-900 hover:from-blue-800 hover:to-blue-950 text-white font-bold rounded-2xl shadow-2xl shadow-blue-900/50 hover:shadow-3xl hover:shadow-blue-900/70 transform hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed"
+							className="w-full py-4 bg-linear-to-r from-blue-700 to-blue-900 hover:from-blue-800 hover:to-blue-950 text-white font-bold rounded-2xl shadow-2xl shadow-blue-900/50 hover:shadow-3xl hover:shadow-blue-900/70 transform hover:-translate-y-1 active:scale-[0.98] transition-all duration-300 disabled:opacity-40 disabled:cursor-not-allowed"
 						>
 							{loading ? (
 								<span className="flex items-center justify-center">
