@@ -17,8 +17,9 @@ const login = () => {
 		try {
 			const res = await loginUser(form);
 			localStorage.setItem("token", res.token);
+			localStorage.setItem("userEmail", res.user.email);
 			setMessage("Login successfull!! Redirecting...");
-			navigate("/Dashboard");
+			navigate("/dashboard");
 		} catch (err) {
 			setError(err.message || "Failed to Logging");
 		} finally {
