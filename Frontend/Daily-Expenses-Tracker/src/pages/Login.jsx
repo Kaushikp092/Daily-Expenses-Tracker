@@ -103,7 +103,7 @@ const Login = () => {
 							New user?{" "}
 							<span
 								className="text-blue-300 font-bold hover:text-blue-200 cursor-pointer transition-all underline decoration-blue-600/60 hover:decoration-blue-500 hover:decoration-2"
-								onClick={() => navigate("/register")}
+								onClick={() => navigate("/Register")}
 							>
 								Create Account
 							</span>

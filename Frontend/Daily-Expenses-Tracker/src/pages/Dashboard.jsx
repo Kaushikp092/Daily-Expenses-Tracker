@@ -12,7 +12,10 @@ const Dashboard = () => {
 
 	// Get user info from localStorage
 	const userEmail = localStorage.getItem("userEmail") || "user@example.com";
-	const userName = localStorage.getItem("userName") || localStorage.getItem("userEmail")?.split('@')[0] || "User";
+	const userName =
+		localStorage.getItem("userName") ||
+		localStorage.getItem("userEmail")?.split("@")[0] ||
+		"User";
 
 	// 🔄 Fetch Expenses
 	const fetchExpenses = async () => {
