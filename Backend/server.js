@@ -6,8 +6,13 @@ const port = process.env.PORT;
 
 const app = express();
 
-// connecting frontend to backend
-app.use(cors({origin: process.env.CLIENT_URL, credentials: true}));
+// Enhanced CORS configuration for production (Render/Vercel)
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 
 // mongoDb mongoose connection
 connectDB();
